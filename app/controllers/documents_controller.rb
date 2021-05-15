@@ -25,6 +25,7 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.save
+        @document.convert_pdf_to_image
         format.html { redirect_to @document, notice: "Document was successfully created." }
         format.json { render :show, status: :created, location: @document }
       else

@@ -1,14 +1,20 @@
-<p id="notice"><%= notice %></p>
+<div class="container">
+  <div class="row">
+    <div class="col-lg-10 mx-lg-auto">
+      <h1 class="display-4 text-center"><%= @document.title %></h1>
+      <p class="lead"><%= @document.description %></p>
+    </div>
+  </div>
+  <% if @document.doc_file_pages.attached? %>
+    <div class="row" style="max-height:600px;overflow: auto;">
+      <% @document.doc_file_pages.each do |doc_page| %>
+        <div class="col-lg-12 mx-lg-auto">
+          <%= image_tag doc_page, class: "img-fluid" %>
+        </div>
+      <% end %>
+    </div>
+  <% end %>
+  <%= link_to 'Edit', edit_document_path(@document) %> |
+  <%= link_to 'Back', documents_path %>
+</div>
 
-<p>
-  <strong>Title:</strong>
-  <%= @document.title %>
-</p>
-
-<p>
-  <strong>Description:</strong>
-  <%= @document.description %>
-</p>
-
-<%= link_to 'Edit', edit_document_path(@document) %> |
-<%= link_to 'Back', documents_path %>
