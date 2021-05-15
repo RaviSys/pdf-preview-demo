@@ -11,22 +11,23 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= form.label :title %>
-    <%= form.text_field :title %>
+  <div class="form-group">
+    <%= form.label :title %><span class="text-danger ml-1">*</span>
+    <%= form.text_field :title, class: "form-control form-control-lg", required: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :description %>
-    <%= form.text_area :description %>
+  <div class="form-group">
+    <%= form.label :description %><span class="text-danger ml-1">*</span>
+    <%= form.text_area :description, class: "form-control form-control-lg", rows: 5, required: true %>
   </div>
 
-  <div class="field">
-    <%= form.label :doc_file %><br>
-    <%= form.file_field :doc_file %>
+  <div class="form-group">
+    <%= form.label :upload_your_pdf_file_here %><span class="text-danger ml-1">*</span><br>
+    <%= form.file_field :doc_file, required: true %>
   </div>
 
-  <div class="actions">
-    <%= form.submit %>
+  <div class="form-group">
+    <%= form.submit class: "btn btn-success" %>
+    <%= link_to 'Back', documents_path, class: "btn btn-outline-success" %>
   </div>
 <% end %>
