@@ -25,7 +25,6 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.save
-        # @document.convert_pdf_to_image
         CreateImagesOfPdfPagesJob.set(wait: 2.seconds).perform_later(@document.id)
         format.js
         format.html { redirect_to @document, notice: "Document was successfully created." }
