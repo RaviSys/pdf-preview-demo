@@ -1,8 +1,24 @@
 <div class="jumbotron">
   <h1 class="display-4">Hello, world!</h1>
-  <p class="lead">In this demo application we will demonstrate that how you can upload documents using active records and convert preview of PDF pages as images.</p>
+  <p class="lead">In this demo application we will demonstrate that how you can upload documents using active records and convert preview of PDF pages as images. We have also used action cable to display progress of PDF pagesto image conversion inside bootstrap modal. Though this is a simple and basic example but you can learn different concepts here from the code base.</p>
   <hr class="my-4">
   <p class="lead">
     <%= link_to "Try It Now", documents_path, class: "btn btn-success btn-lg" %>
   </p>
+</div>
+
+<div class="container">
+  <div class="row">
+    <div class="col-lg-8 mx-lg-auto">
+      <h1 class="display-6 mb-4 mt-4">Features you may learn from this demo</h1>
+      <ul class="list-group">
+        <li class="list-group-item lead">How to upload files in rails using ActiveStorage?</li>
+        <li class="list-group-item lead">How to convert image preview of PDF pages using MiniMagic?</li>
+        <li class="list-group-item lead">How to submit rails form using AJAX?</li>
+        <li class="list-group-item lead">How to use ActionCable for rendering response for a rails action?</li>
+        <li class="list-group-item lead">How to display progress bar for pdf to image conversion?</li>
+        <li class="list-group-item lead">Calling ActiveJob from rails controller.</li>
+      </ul>
+    </div>
+  </div>
 </div>
