@@ -25,10 +25,13 @@ class DocumentsController < ApplicationController
 
     respond_to do |format|
       if @document.save
-        @document.convert_pdf_to_image
+        # @document.convert_pdf_to_image
+        CreateImagesOfPdfPagesJob.set(wait: 2.seconds).perform_later(@document.id)
+        format.js
         format.html { redirect_to @document, notice: "Document was successfully created." }
         format.json { render :show, status: :created, location: @document }
       else
+        format.js
         format.html { render :new, status: :unprocessable_entity }
         format.json { render json: @document.errors, status: :unprocessable_entity }
       end
