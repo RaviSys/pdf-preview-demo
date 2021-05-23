@@ -1,0 +1,14 @@
+<div class="modal-dialog modal-dialog-centered" role="document">
+  <div class="modal-content">
+    <div class="modal-body">
+      <p class="lead text-center">We are preparing your document. This will take some time.</p>
+      <div id="conversion-progress-bar" class="progress" data-last-uploaded-document-id="<%= document_id %>"></div>
+      <p id="converted-page-number" class="ml-2" data-last-uploaded-document-id="<%= document_id %>"><span class="text-primary font-weight-bold">Status:</span> Preparing document</p>
+
+      <div id="alert-message">
+        <p>If you need to come back later, your document can be found in the drafts section <a href="/documents/<%= document_id %>" target="_blank" class="text-primary font-weight-bold">here</a>.</p>
+      </div>
+    </div>
+
+  </div>
+</div>
